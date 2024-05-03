@@ -43,15 +43,15 @@
                         <input  name="email" type="email" class="form__field form__field--email"  required >
                       </label>
                       </div>
-                    <div class="form__avatar-container">
-                      <label class="logo-up" for="avatar-upload">
+                    <div class="form__logo-container">
+                      <label class="logo-up" for="logo-upload">
                           <span class="form__fields--span span--avatar">
                               <span class="red-star"> ✱</span>Логотип (jpeg, png)
                           </span>
                       </label>
-                      <input type="file" id="avatar-upload" accept="image/*" onchange="previewImage.call(this)" required  />
+                      <input type="file" id="logo-upload" accept="image/*" onchange="previewImage.call(this)" required  />
                       <div class="img-wrapper">
-                        <img id="avatar-preview" src="avatar.jpg" alt="Аватар"  />
+                        <img id="logo-preview" src="avatar.jpg" alt="Логотип компании"  />
                       </div>
                       <button type="button" id="cancel-upload" onclick="cancelUpload()"></button>
                       <script>
@@ -59,7 +59,7 @@
                             if (this.files && this.files[0]) {
                                 let reader = new FileReader();
                                 reader.onload = function(e) {
-                                    let img = document.getElementById("avatar-preview");
+                                    let img = document.getElementById("logo-preview");
                                     img.src = e.target.result;
                                     img.style.display = "block"; 
                                 };
@@ -67,8 +67,8 @@
                             }
                         }
                         function cancelUpload() {
-                            document.getElementById("avatar-upload").value = ''; 
-                            document.getElementById("avatar-preview").src = "avatar.jpg"; 
+                            document.getElementById("logo-upload").value = ''; 
+                            document.getElementById("logo-preview").src = "avatar.jpg"; 
                         }
                     </script>  
                   </div>
