@@ -1,0 +1,280 @@
+body {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: space-around;
+}
+button.open-modal {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-top: 14px;
+  padding-bottom: 16px;
+  width: 100%;
+  background-color: aliceblue;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+h1.page__title {
+  padding-top: 200px;
+}
+
+
+/* modal */
+.modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal__hidden {
+    display: none;
+  }
+  .modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 58px 98px 35px 98px;
+    border-radius: 12px;
+    max-width: 754px;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+  
+h2.modal__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 34px;
+  text-align: left;
+  padding-bottom: 35px;
+}
+  /* form content */
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form__field {
+    margin-bottom: 10px;
+    padding: 16px 22px 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+
+  }
+  .form__spilt-block {
+    display: flex;
+  }
+
+  label.form__fields--label {
+    position: relative;
+  }
+  span.form__fields--span {
+  position: absolute;
+  margin-left: 16px;
+  padding-top: 8px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #6A6E72;
+  }
+ span.red-star {
+  color: red;
+ }
+input.form__field,select.form__field {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 35px;
+}
+input.form__field.form-field--with-icon {
+  padding: 16px 16px 16px 16px;
+  position: relative;
+}
+.input-wrapper {
+  position: relative;
+}
+.input-wrapper::before {
+  content: '';
+  position: absolute;
+  display: block; 
+  width: 22px;
+  height: 22px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  top: 19px;
+  right: 16px;
+  z-index: 1;
+}
+.input-wrapper.web-site::before {
+  background-image: url(./web-icon.svg);
+}
+.input-wrapper.vk::before {
+  background-image: url(./vk-icon.svg);
+}
+.input-wrapper.facebook::before {
+  background-image: url(./fb-icon.svg);
+}
+.input-wrapper.youtube::before {
+  background-image: url(./youtube.svg);
+}
+.input-wrapper.odnoklassniki::before {
+  background-image: url(./odnoklassniki-icon.svg);
+}
+.input-wrapper.instagram::before {
+  background-image: url(./insta-icon.svg);
+}
+
+/* form avatar */
+.img-wrapper {
+  position: relative;
+}
+.img-wrapper::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  display: block;
+  background-image: url(./upload-icon.svg);
+  background-position: center center;
+  z-index: 1;
+  right: 77px;
+  top: 41px;
+}
+input#avatar-upload {
+  position: absolute;
+  top: 78px;
+  color: #fff;
+  z-index: 5;
+  left: 20px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  width: 145px;
+}
+
+.form__avatar-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    max-width: 175px;
+    height: auto;
+    position: relative;
+    margin-left: 20px;
+}
+span.form__fields--span.span--avatar {
+  top: -31px;
+  text-wrap: nowrap;
+}
+
+img#avatar-preview {
+    clip-path: circle(50% at 50% 50%);
+    width: 175px;
+    height: 175px;
+}
+
+input[type="file" i]::-webkit-file-upload-button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18.67px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: center;
+  border: none;
+  text-decoration: underline;
+  color: #fff;
+  display: flex;
+  cursor: pointer;
+}
+button#cancel-upload {
+  position: absolute;
+  right: 0%;
+  top: 7%;
+  border: none;
+  width: 36px;
+  height: 36px;
+  background-color: #fff;
+  background-image: url(./close.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+  
+  .form__submit {
+    background: #E5266E;
+    color: #fff;
+    padding-top: 14px;
+    padding-bottom: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .close-modal {
+    margin-top: 15px;
+    background: #fff;
+    color: #0848C0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+  }
+
+  .form__fields {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 362px;
+}
+
+.form__avatar {
+  width: 33%;
+  height: auto;
+}
+
+.form__avatar-remove,
+.form__avatar-upload {
+  margin-left: 10px; /* Добавляем отступ слева между кнопкой удаления и загрузкой аватара */
+}
+
+@media (max-width: 768px) {
+ .form__fields,
+ .form__avatar-container {
+    flex-direction: column;
+  }
+}

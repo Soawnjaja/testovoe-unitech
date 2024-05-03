@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/pt-sans-2" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Тестовое - Практика-2</title>
+</head>
+<body>
+    <section>
+      <div class="container">
+        <h1 class="page__title">Заголовок</h1>
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio adipisci, repudiandae quam laudantium dolorem aliquam quibusdam impedit. Repudiandae dolor aliquam a atque voluptatibus optio, nostrum possimus. Magni libero praesentium molestias?
+          Obcaecati sed repellendus voluptate recusandae! Maiores rerum numquam voluptatibus dicta autem beatae facilis cumque dignissimos, praesentium recusandae, molestias reprehenderit quod aliquam repellat est nulla in neque qui vel soluta provident?
+          Similique numquam voluptates laudantium autem veritatis. Minima, quos corrupti nihil quidem mollitia molestiae iure accusamus officiis voluptates optio eius illo explicabo earum eos reiciendis cum aspernatur cumque perferendis? Magnam, harum!
+          Dolorum necessitatibus blanditiis illo ipsum soluta! Repellat, odio aliquid accusamus maxime possimus nobis minima, magni est eaque dolorum eum quis officia unde quos. Id consectetur saepe incidunt cupiditate, ullam possimus!
+          Praesentium, ex veniam! Deserunt, vitae ea amet quis error provident ipsam facilis laudantium veniam, labore, ipsa nostrum mollitia aliquam. Rem, eos a. Debitis, explicabo architecto? Dolor expedita deserunt magni error.</p>
+          <button class="open-modal">Заполнить заявку</button>
+      </div>
+        <div class="modal">
+            <div class="modal__overlay"></div>
+            <div class="modal__content">
+              <h2 class="modal__title">Стать партнером проекта</h2>
+              <!-- Форма -->
+              <form class="form">
+                <div class="form__spilt-block">
+                    <div class="form__fields">
+                      <label class="form__fields--label" for="name"> 
+                       <span class="form__fields--span"><span class="red-star"> ✱</span>Название организации</span> 
+                        <input name="name" type="text" class="form__field form__field--name" required >
+                      </label> 
+                      <label  class="form__fields--label" for="phone">
+                        <span class="form__fields--span"><span class="red-star"> ✱</span>Телефон</span> 
+                        <input name="phone" type="tel" class="form__field form__field--phone" required  >
+                      </label>
+                      <label class="form__fields--label" for="email">
+                        <span class="form__fields--span"><span class="red-star"> ✱</span>E-mail</span> 
+                        <input  name="email" type="email" class="form__field form__field--email"  required >
+                      </label>
+                      </div>
+                    <div class="form__avatar-container">
+                      <label class="logo-up" for="avatar-upload">
+                          <span class="form__fields--span span--avatar">
+                              <span class="red-star"> ✱</span>Логотип (jpeg, png)
+                          </span>
+                      </label>
+                      <input type="file" id="avatar-upload" accept="image/*" onchange="previewImage.call(this)" required  />
+                      <div class="img-wrapper">
+                        <img id="avatar-preview" src="avatar.jpg" alt="Аватар"  />
+                      </div>
+                      <button type="button" id="cancel-upload" onclick="cancelUpload()"></button>
+                      <script>
+                        function previewImage() {
+                            if (this.files && this.files[0]) {
+                                let reader = new FileReader();
+                                reader.onload = function(e) {
+                                    let img = document.getElementById("avatar-preview");
+                                    img.src = e.target.result;
+                                    img.style.display = "block"; 
+                                };
+                                reader.readAsDataURL(this.files[0]);
+                            }
+                        }
+                        function cancelUpload() {
+                            document.getElementById("avatar-upload").value = ''; 
+                            document.getElementById("avatar-preview").src = "avatar.jpg"; 
+                        }
+                    </script>  
+                  </div>
+                </div>
+                <label class="form__fields--label" for="direction">
+                  <span class="form__fields--span"><span class="red-star"> ✱</span>Направления</span> 
+                <select  name ="direction" class="form__field form__field--direction" required  >
+                  <option value="">Экология</option>
+                  <option value="marketing">Маркетинг</option>
+                  <option value="IT">IT</option>
+                </select>
+               </label>
+               <div class="input-wrapper web-site">
+                 <input type="url" class="form__field form__field--website form-field--with-icon" placeholder="Сайт организации" >
+               </div>
+               <div class="input-wrapper vk">
+                 <input type="text" class="form__field form__field--vk form-field--with-icon" placeholder="VK">
+               </div>
+               <div class="input-wrapper odnoklassniki">
+                 <input type="text" class="form__field form__field--odnoklassniki form-field--with-icon" placeholder="Одноклассники">
+               </div>
+               <div class="input-wrapper youtube">
+                 <input type="text" class="form__field form__field--youtube form-field--with-icon" placeholder="YouTube">
+               </div>
+               <div class="input-wrapper facebook">
+                 <input type="text" class="form__field form__field--facebook form-field--with-icon" placeholder="Facebook">
+               </div>
+               <div class="input-wrapper instagram">
+                 <input type="text" class="form__field form__field--instagram form-field--with-icon" placeholder="Instagram">
+               </div>
+
+              <label class="form__fields--label" for="full-name">
+                <span class="form__fields--span">Руководитель</span> 
+                <input type="text" name="full-name" class="form__field form__field--fio" placeholder="ФИО" >
+              </label>
+
+                <button  id="form__submit" class="form__submit">Стать партнером проекта</button>
+                <button type="button"  class="close-modal">Отменить</button>
+              </form>
+            </div>
+          </div>
+    </section>
+  
+</body>
+</html>
